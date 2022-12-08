@@ -19,7 +19,6 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Twitter: [@recillahk](https://twitter.com/recillahk)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/recillah-khamala/)
 
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
