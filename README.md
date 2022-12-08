@@ -17,7 +17,9 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
 - [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -52,10 +54,20 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
 
 
+### Setup
+- install postgreSQL on your machine 
+- this comes with the sql shell (a command line interface );
+- open the sql shell
+- run the command ```create database vet_clinic ``` which will create the vet_clinic database
+- navigate to the database using  ```\c vet_clinic ```
+- we can now create tables using  ``` create table table_name ```
+- after creating the tables you can make all queries that yo may want 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- AUTHORS -->
 
 ## 👥 Author <a name="author"></a>
-
 
 👤 **Recillah Khamala**
 
@@ -63,6 +75,17 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Twitter: [@recillahk](https://twitter.com/recillahk)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/recillah-khamala/)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Describe 1 - 3 features you will add to the project.
+
+- [Multiple tables ] **[include_other_tables]**
+- [Relationship between tables ] **[build_relationships_between_tables]**
+- [Relationship with multiple tables ] **[Build_group_relationships]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -88,7 +111,9 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for including this in the carriculum
+> Give credit to everyone who inspired your codebase.
+
+I would like to thank microverse for including this in the carriculum.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
