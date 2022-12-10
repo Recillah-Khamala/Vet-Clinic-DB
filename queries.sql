@@ -9,6 +9,8 @@ SELECT * FROM animals WHERE neutered = true;
 SELECT * FROM animals WHERE name != 'Gabumon';
 SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
+/*============= Day 2 =============*/
+
 /*============= First Transaction =============*/
 -- start Transaction
 
@@ -104,3 +106,12 @@ SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
 
 -- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
 SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth >= '1990-01-01' AND date_of_birth <= '2000-12-31' GROUP BY species;
+
+/*============= Day 3 =============*/
+-- Write queries (using JOIN) to answer the following questions
+-- What animals belong to Melody Pond?
+SELECT name, date_of_birth, escape_attempts, neutered, weight_kg, species_id, owner_id
+FROM animals
+INNER JOIN owners
+ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Melody Pond';
