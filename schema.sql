@@ -59,3 +59,33 @@ ALTER TABLE animals
 ADD CONSTRAINT fk_owner_id
 FOREIGN KEY (owner_id)
 REFERENCES owners(id);
+
+/*============= Day 4 =============*/
+
+-- Create a table named vets with columns
+CREATE TABLE IF NOT EXISTS vets(
+	id INT GENERATED ALWAYS AS IDENTITY,
+	name VARCHAR(100),
+	age INT,
+	date_of_graduation DATE,
+	PRIMARY KEY (id)
+);
+
+-- Create a "join table" called specializations to handle species and vets relationship
+CREATE TABLE IF NOT EXISTS specializations(
+	vet_id INT,
+	species_id INT,
+	PRIMARY KEY (vet_id, species_id),
+	CONSTRAINT fk_vet_id FOREIGN KEY (vet_id) REFERENCES vets (id),
+	CONSTRAINT fk_species_id FOREIGN KEY (species_id) REFERENCES species (id)
+);
+
+-- Create a "join table" called visits to handle animals and vets relationship.
+CREATE TABLE IF NOT EXISTS visits(
+	animal_id INT,
+	vet_id INT,
+	date_of_visit DATE,
+	PRIMARY KEY (animal_id, vet_id, date_of_visit),
+	CONSTRAINT fk_animal_id FOREIGN KEY (animal_id) REFERENCES animals (id),
+	CONSTRAINT fk_vet_id FOREIGN KEY (vet_id) REFERENCES vets (id)
+);
