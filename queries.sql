@@ -254,3 +254,44 @@ JOIN species ON species.id = animals.species_id
 WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name
 ORDER BY visits DESC LIMIT 1;
+
+
+/*============= Day 5 =============*/
+
+-- first query
+SELECT COUNT(*) FROM visits where animal_id = 4;
+
+-- Check execution time 
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+
+-- Create index
+CREATE INDEX animal_id_asc ON visits(animal_id ASC);
+
+-- check execution time again
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+
+-- second query
+SELECT * FROM visits where vet_id = 2;
+
+-- check execution time 
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+
+-- create index
+CREATE INDEX vet_id_asc ON visits(vet_id ASC);
+
+-- Check execution time again 
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+
+-- Third query 
+SELECT * FROM owners where email = 'owner_18327@mail.com';
+
+-- Check the execution time 
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
+
+-- Create an index
+CREATE INDEX email_asc ON owners(email ASC);
+
+-- Check execution time again
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com'; 
+
+
