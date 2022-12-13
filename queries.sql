@@ -190,7 +190,7 @@ SELECT * FROM owners where email = 'owner_18327@mail.com';
 EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
 
 -- Create an index
-
+CREATE INDEX email_asc ON owners(email ASC);
 
 -- Check execution time again
 EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com'; 
