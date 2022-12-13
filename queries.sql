@@ -158,3 +158,39 @@ WHERE owners.full_name = 'Dean Winchester'
 AND escape_attempts = 0;
 
 -- Who owns the most animals?
+
+-- first query
+SELECT COUNT(*) FROM visits where animal_id = 4;
+
+-- Check execution time 
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+
+-- Create index
+CREATE INDEX animal_id_asc ON visits(animal_id ASC);
+
+-- check execution time again
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+
+-- second query
+SELECT * FROM visits where vet_id = 2;
+
+-- check execution time 
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+
+-- create index
+CREATE INDEX vet_id_asc ON visits(vet_id ASC);
+
+-- Check execution time again 
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+
+-- Third query 
+SELECT * FROM owners where email = 'owner_18327@mail.com';
+
+-- Check the execution time 
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
+
+-- Create an index
+
+
+-- Check execution time again
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com'; 
