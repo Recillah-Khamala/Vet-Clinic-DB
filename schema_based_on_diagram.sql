@@ -1,3 +1,4 @@
+-- Create a file named schema_based_on_diagram.sql where you implement the database from the diagram.
 CREATE TABLE patients (
   id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
@@ -38,3 +39,11 @@ CREATE TABLE medical_histories_treatments(
   medical_history_id INT REFERENCES medical_histories(id),
   treatment_id INT REFERENCES treatments(id)
 );
+
+
+-- Remember to add the FK indexes.
+CREATE INDEX medical_histories_id ON medical_histories(patient_id);
+CREATE INDEX invoice_id_id ON invoice_items(invoice_id);
+CREATE INDEX treatment_id_id ON invoice_items(treatment_id);
+CREATE INDEX medical_history_id_id ON medical_histories_treatments(medical_history_id);
+CREATE INDEX treatment_id ON medical_histories_treatments(treatment_id);
